@@ -1,10 +1,10 @@
 <template>
-  <header class="main-header">
+  <header :class="$style.mainHeader">
     <h1>JTodo</h1>
   </header>
 </template>
 
-<style lang="stylus" scoped>
+<style type="text/stylus" lang="stylus" rel="stylesheet/stylus" module>
 .main-header{
   text-align center
   h1{
@@ -12,6 +12,7 @@
     color: rgba(175, 47, 47, 0.4)
     font-weight 100
     margin 20px
+    /*background-color: red*/
   }
 }
 </style>

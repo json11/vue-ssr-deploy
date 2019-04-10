@@ -3,7 +3,8 @@
     <input 
       type="checkbox"
       class="toggle"
-      v-model="todo.completed"
+      :checked="todo.completed"
+      @click="handleToggle"
     >
     <label>{{todo.content}}</label>
     <button class="destory" @click="deleteTodo"></button>
@@ -21,12 +22,16 @@ export default {
   methods: {
     deleteTodo() {
       this.$emit('del', this.todo.id)
-    }
+    },
+      handleToggle(e) {
+        e.preventDefault()
+          this.$emit('toggle', this.todo)
+      }
   }
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus" type="text/stylus" scoped>
 .todo-item{
   position relative
   background-color #fff
@@ -65,10 +70,10 @@ export default {
   appearance: none;
   outline none
   &:after{
-    content url('../assets/images/round.svg')
+    content url('../../assets/images/round.svg')
   }
   &:checked:after{
-    content url('../assets/images/done.svg')
+    content url('../../assets/images/done.svg')
   }
 }
 .destory{
