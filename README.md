@@ -14,7 +14,9 @@ npm install
 npm run dev
 ```
 开始开发项目
+pm2 start pm2.yml (启动服务) 
 
+localhost:3333
 
 
 # 发布部署项目步骤
@@ -27,5 +29,5 @@ npm run dev
 [5] cd vue-ssr-tech/ (进去项目目录)
 [6] npm i (安装依赖包)
 [7] npm run build(生成文件)
-[8] pm2 start pm2.yml (启动服务)
+[8] pm2 start pm2.yml (启动服务)  
 [9] 用nginx 做反向代理， 访问我们启动的服务
